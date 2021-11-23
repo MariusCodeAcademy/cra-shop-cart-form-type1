@@ -9,3 +9,7 @@
    6.1 List and items shoud be react components with props
 7. Create 'add to cart button' next to every item
 8. Button press adds item to cart (context? )
+9. Add user details form (formik)
+10. Validate user form (formik)
+11. Add Step2 - user details + cart items with total amount
+12. Add Step3 - Total ammount + card Details form + Pay now

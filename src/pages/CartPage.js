@@ -6,6 +6,11 @@ import { useCartCtx } from '../store/CartContext';
 // display all cart items from context in a list
 function CartPage() {
   const [buyStep, setBuyStep] = useState(0);
+  const [userInfo, setUserInfo] = useState({
+    name: '',
+    address: '',
+    cardNo: '',
+  });
 
   const cartCtx = useCartCtx();
   const weHaveItems = !!cartCtx.cartItems.length;

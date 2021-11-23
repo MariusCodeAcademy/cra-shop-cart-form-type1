@@ -36,7 +36,7 @@ function Item(props) {
       <h2>{title}</h2>
       <h3>Price {price} eur</h3>
       <p>Category: {category}</p>
-      <button onClick={() => cartCtx.addToCart({ id, title, price })}>
+      <button onClick={() => cartCtx.addToCart({ id, title, price, qty: 1 })}>
         Add To cart
       </button>
     </ItemCard>
