@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useCartCtx } from '../../store/CartContext';
 const ItemCard = styled.div`
   display: flex;
   /* flex-direction: column; */
@@ -26,14 +27,18 @@ const ItemCard = styled.div`
 `;
 
 function Item(props) {
-  const { title, price, image, category } = props.item;
+  const { id, title, price, image, category } = props.item;
+  const cartCtx = useCartCtx();
+
   return (
     <ItemCard>
       <img src={image} alt={title} />
       <h2>{title}</h2>
       <h3>Price {price} eur</h3>
       <p>Category: {category}</p>
-      <button>Add To cart</button>
+      <button onClick={() => cartCtx.addToCart({ id, title, price })}>
+        Add To cart
+      </button>
     </ItemCard>
   );
 }
