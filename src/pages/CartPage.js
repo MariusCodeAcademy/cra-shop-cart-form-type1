@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Step1 from '../components/Checkout/Step1';
 import { useCartCtx } from '../store/CartContext';
 
 //
@@ -12,7 +13,7 @@ function CartPage() {
     <main>
       <h1>Cart page</h1>
       {!weHaveItems && <h2>Cart empty</h2>}
-      {weHaveItems && (
+      {weHaveItems && buyStep === 0 && (
         <section>
           <h2>Items in cart</h2>
           {cartCtx.cartItems.map((item) => (
@@ -21,9 +22,11 @@ function CartPage() {
             </li>
           ))}
           <br />
-          <button>Buy now</button>
+          <button onClick={() => setBuyStep(1)}>Buy now</button>
         </section>
       )}
+      {buyStep === 1 && <Step1 setStep={setBuyStep} />}
+      {buyStep === 2 && <h3>Please make the step 2</h3>}
     </main>
   );
 }
