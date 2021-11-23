@@ -1,11 +1,28 @@
+import { Switch, Route } from 'react-router';
 import './App.css';
-import MyBtn from './components/MyBtn';
+import Header from './components/Header';
+import CartPage from './pages/CartPage';
+import ShopPage from './pages/ShopPage';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
     <div>
-      <h2>App</h2>
-      <MyBtn></MyBtn>
+      <Header />
+      <Switch>
+        <Route path='/cart'>
+          <CartPage />
+        </Route>
+        <Route path='/shop'>
+          <ShopPage />
+        </Route>
+        <Route exact path='/'>
+          <HomePage />
+        </Route>
+        <Route path='*'>
+          <h2>OOPS page not found</h2>
+        </Route>
+      </Switch>
     </div>
   );
 }
