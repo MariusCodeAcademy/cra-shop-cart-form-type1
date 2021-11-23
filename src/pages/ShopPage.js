@@ -15,10 +15,14 @@ function ShopPage() {
   const getShopItems = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/products`);
-      console.log('ShopPage.js: response ===', response);
-      console.log(response.data);
+      // console.log('ShopPage.js: response ===', response);
+      // response - pilnas atsakas
+      // response.data - yra duomenys sekmingos uzklausos atveju
+      // console.log(response.data);
+      setShopItems(response.data);
     } catch (error) {
-      console.error(error);
+      console.log('axios failed');
+      console.error(error.message);
     }
   };
 
