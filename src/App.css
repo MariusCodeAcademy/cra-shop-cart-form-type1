@@ -14,3 +14,7 @@ a {
 main {
   margin: 0 10%;
 }
+
+img {
+  max-width: 100%;
+}

@@ -19,3 +19,8 @@
    1.1 form step - does user have an account?(tiems kas darot greiciau)
    1.2 form step1 - user details
    1.3 form step2 - user detail and items
+
+## TODO
+
+1. propTypes
+2. localStorage
