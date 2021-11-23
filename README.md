@@ -24,3 +24,4 @@
 
 1. propTypes
 2. localStorage
+3. Empty cart button

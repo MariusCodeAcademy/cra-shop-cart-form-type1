@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import { useCartCtx } from '../store/CartContext';
 
+//
 // display all cart items from context in a list
 function CartPage() {
+  const [buyStep, setBuyStep] = useState(0);
+
   const cartCtx = useCartCtx();
   const weHaveItems = !!cartCtx.cartItems.length;
   return (
@@ -16,6 +20,8 @@ function CartPage() {
               {item.title} - {item.price}
             </li>
           ))}
+          <br />
+          <button>Buy now</button>
         </section>
       )}
     </main>
